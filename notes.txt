@@ -1,0 +1,73 @@
+2.1 Project perspective
+If you are like me, You really don’t know what is happening in your neighborhood most of the time. What if an important meeting happens, theft or even death wouldn’t you like to know about it.
+
+Your Job is to create a web application that allows you to be in the loop about everything happening in your neighborhood. From contact information of different handyman to meeting announcements or even alerts.
+
+2.2 User stories
+As a user I would like to:
+
+        Sign in with the application to start using.
+        Set up a profile about me and a general location and my neighborhood name.
+        Find a list of different businesses in my neighborhood.
+        Find Contact Information for the health department and Police authorities near my neighborhood.
+        Create Posts that will be visible to everyone in my neighborhood.
+        Change My neighborhood when I decide to move out.
+        Only view details of a single neighborhood.
+
+3. System Features
+    Feature A: NeighbourHood class:
+    You should have a neighborhood class with the following properties:
+
+            Neighbourhood Name
+            Neighborhood location
+            Occupants Count
+            Admin Foreign key
+            Some of the methods you will need to implement are:
+
+            create_neigborhood()
+            delete_neigborhood()
+            find_neigborhood(neigborhood_id)
+            update_neighborhood()
+            update_occupants()
+    Remember you are required to test all the methods you create.
+
+Feature B: User class
+You will create a user class with the following properties;
+
+name.
+id.
+neighborhood id foreign key
+email address.
+Feature C: Business class
+You will create a business class with the following properties;
+
+Business name
+User foreign key
+neighborhood id foreign key
+Business email address.
+The Methods we will create are:
+
+create_business()
+delete_business()
+find_business(business_id)
+update_business()
+Remember you are required to test all the methods you create.
+
+Feature D: Business search
+Your application must have a business search functionality where users can search for businesses in their area.
+
+Feature G: Admin Dashboard
+Your project should have a dashboard that you will use to manage the different users.
+
+Feature H: Authentication system
+Your application should have a solid authentication system that allows users to sign in or register into the application before using it. When a user registers with your application they should receive a confirmation email.
+
+Feature I: Deployment
+Your project should be deployed to Heroku when you have finished with the set features. You should provide the link to your project in the description part of your project repository.
+
+4. Other Nonfunctional Requirements
+4.1 Software quality attributes
+Your code should be written following the Python pep 8 guidelines. Make sure you document major sections of your code using docstrings. Also, ensure you commit regularly and your commit messages are clear and well written.
+
+4.2 Project documentation
+You should have a well-documented README for your project. You can follow this template README to write your README file.
