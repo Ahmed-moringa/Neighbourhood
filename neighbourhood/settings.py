@@ -43,20 +43,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # installed apps
     'neighbour',
-    'bootstrap5',
     'rest_framework',
     'crispy_forms',
-    'crispy_bootstrap5',
     'pyuploadcare.dj',
 ]
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 UPLOADCARE = {
     'pub_key': config('pub_key'),
     'secret': config('secret'),
 }
-CRISPY_TEMPLATE_PACK = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -155,6 +152,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = 'static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
