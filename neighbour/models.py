@@ -14,20 +14,20 @@ class NeighbourHood(models.Model):
         return self.name
 
     def create_neighborhood(self):
-        self.save()
+       return self.save()
 
     def delete_neighborhood(self):
-        self.delete()
+       return self.delete()
 
     @classmethod
     def find_neighborhood(cls, neighborhood_id):
         return cls.objects.filter(id=neighborhood_id)
     
     def update_neighborhood(self):
-        self.update()
+        return self.update()
     
     def update_occupants(self):
-        self.update()
+       return self.update()
 
 
 class Profile(models.Model):
