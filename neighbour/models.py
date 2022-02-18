@@ -22,6 +22,12 @@ class NeighbourHood(models.Model):
     @classmethod
     def find_neighborhood(cls, neighborhood_id):
         return cls.objects.filter(id=neighborhood_id)
+    
+    def update_neighborhood(self):
+        self.update()
+    
+    def update_occupants(self):
+        self.update()
 
 
 class Profile(models.Model):
@@ -64,6 +70,9 @@ class Business(models.Model):
     @classmethod
     def search_business(cls, name):
         return cls.objects.filter(name__icontains=name).all()
+    
+    def update_business(self):
+        self.update()
 
 
 class Post(models.Model):
