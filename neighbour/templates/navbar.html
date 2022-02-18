@@ -1,6 +1,6 @@
 {% load crispy_forms_tags %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">MyNeighbourhood</a>
+  <a class="navbar-brand" href="{% url 'index' %}">MyNeighbourhood</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
     aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -9,15 +9,18 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       {% if user.is_authenticated %}
-      <li class="nav-item active ">
-        <img class="rounded-circle nav-img" src="{{ user.profile.profile_picture.url }}">
-      </li>
       <li class="nav-item active">
         <a href="{% url 'edit-profile' user.username %}">Edit Profile</a>
       </li>
       <li class="nav-item active">
         <a href="{% url 'hood' %}">Neighbourhoods
         </a>
+      </li>
+      <li class="nav-item  ">
+        <a href="{% url 'profile' user.username %}">
+          <img class="rounded-circle nav-img"src="{{ user.profile.profile_picture.url }}" alt="">
+          &nbsp; Profile
+      </a>
       </li>
       {% else %}
       <li class="nav-item active">
@@ -28,6 +31,16 @@
         <a class="nav-link" href="{% url 'signup' %}">Signup</a>
       </li>
       {% endif %}
+      {% if user.profile.neighbourhood %}
+        <li class="mb-4">
+            <a href="{% url 'single-hood' user.profile.neighbourhood.id %}">{{user.profile.neighbourhood.name}}</a>
+        </li>
+        {% else %}
+        <li class="mb-4">
+            <a href=""> &nbsp;N/A
+            </a>
+        </li>
+        {% endif %}
     </ul>
     <form class="form-inline" method="get" action="{% url 'search' %}">
       {% csrf_token %}
