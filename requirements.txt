@@ -9,6 +9,7 @@ dj-database-url==0.5.0
 Django==4.0.2
 django-bootstrap-v5==1.0.11
 django-crispy-forms==1.14.0
+django-heroku==0.3.1
 django-registration==3.2
 djangorestframework==3.13.1
 dnspython==2.2.0
