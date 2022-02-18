@@ -134,7 +134,7 @@ def search_business(request):
             'results': results,
             'message': message
         }
-        return render(request, 'results.html', params)
+        return render(request, 'search_results.html', params)
     else:
         message = "You haven't searched for any image category"
     return render(request, "search_results.html")
